@@ -16,18 +16,21 @@ KEYWORDS="~amd64"
 RDEPEND="
     dev-lang/luajit
     dev-libs/wayland
-    x11-libs/libxkbcommon
     media-libs/libglvnd
     media-libs/libspng
+    x11-base/xwayland
     x11-libs/libxcb
+    x11-libs/libxkbcommon
 "
 
 DEPEND="
     ${RDEPEND}
     dev-libs/wayland-protocols
+    x11-base/xorg-proto
 "
 
 BDEPEND="
+    dev-util/wayland-scanner
     virtual/pkgconfig
 "
 
