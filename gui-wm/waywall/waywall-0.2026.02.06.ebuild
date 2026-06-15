@@ -14,24 +14,24 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND="
-    dev-lang/luajit
-    dev-libs/wayland
-    media-libs/libglvnd
-    media-libs/libspng
-    x11-base/xwayland
-    x11-libs/libxcb
-    x11-libs/libxkbcommon
+	dev-lang/luajit
+	dev-libs/wayland
+	media-libs/libglvnd
+	media-libs/libspng
+	x11-base/xwayland
+	x11-libs/libxcb
+	x11-libs/libxkbcommon
 "
 
 DEPEND="
-    ${RDEPEND}
-    dev-libs/wayland-protocols
-    x11-base/xorg-proto
+	${RDEPEND}
+	dev-libs/wayland-protocols
+	x11-base/xorg-proto
 "
 
 BDEPEND="
-    dev-util/wayland-scanner
-    virtual/pkgconfig
+	dev-util/wayland-scanner
+	virtual/pkgconfig
 "
 
 src_configure() {
@@ -41,12 +41,12 @@ src_configure() {
 src_install() {
 	meson_src_install
 
-    # upstream is missing `install : true`
-    exeinto /usr/bin
+	# upstream is missing `install : true`
+	exeinto /usr/bin
 	doexe "${BUILD_DIR}"/waywall/waywall
 
-    # documentation
-    dodoc README.md LICENSE
-    docinto doc
-    dodoc -r doc/*
+	# documentation
+	dodoc README.md LICENSE
+	docinto doc
+	dodoc -r doc/*
 }
